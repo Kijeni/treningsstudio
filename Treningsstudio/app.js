@@ -16,11 +16,11 @@ const crypto = require("crypto");
 
 // fake userdb just for testing - should be stored in db
 const userlist = {
-  1: { id: 1, username: "admin", password: umd5("123") },
-  2: { id: 2, username: "Bond", password: umd5("234") },
-  3: { id: 3, username: "James", password: umd5("435") }
+  1: { id: 1, username: "admin", password: umd5("1230") },
+  2: { id: 2, username: "bib1", password: umd5("1234") },
+  3: { id: 3, username: "bib2", password: umd5("1235") }
 };
-const _username2id = { admin: 1, Bond: 2, James: 3 };
+const _username2id = { admin: 1, bib1: 2, bib2: 3 };
 
 const _usersById = id => {
   return userlist[id] || { username: "none", password: "" };
@@ -129,14 +129,13 @@ app.post("/runsql", function(req, res) {
       safesql(user, res, data);
     }
   } else {
-    saferSQL(res, data, { tables: "kunde,ptime,ptrener," });
+    saferSQL(res, data, { tables: "ptrener" });
   }
 });
 
 async function saferSQL(res, obj, options) {
   const predefined = [
-    "select * from bok b join forfatter f on (b.forfatterid = f.forfatterid)",
-    "select e.*, b.tittel from eksemplar e join bok b on (e.bokid = b.bokid)"
+    "select * from ptrener"
   ]
   let results = { error:"Illegal sql" };
   let tables = options.tables.split(",");

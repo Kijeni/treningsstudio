@@ -1,3 +1,5 @@
+-- drop table bok,laaner,forfatter,eksemplar,utlaan cascade;
+
 CREATE TABLE ptime (
   ptimeid serial primary key,
   tittel text not null,
@@ -6,13 +8,13 @@ CREATE TABLE ptime (
 );
 
 CREATE TABLE gtime (
-  gtimeid serial primary key,
-  tittel text not null,
- dato date,
- klokkeslett time
+    gtimeid serial primary key,
+    tittel text not null,
+    dato date,
+    klokkeslett time
 );
 
-CREATE TABLE kunde(
+CREATE TABLE kunde (
   kundeid serial primary key,
   fornavn text not null,
   etternavn text not null,
@@ -40,6 +42,3 @@ CREATE TABLE ptrener (
   ),
   kundeid int references kunde (kundeid)
 );
-
-
-

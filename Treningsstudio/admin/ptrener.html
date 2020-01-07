@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ptrener</title>
+    <title>Registrer forfatter</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbTable.js"></script>
@@ -12,20 +13,29 @@
     <script src="/components/Homebar.js"></script>
     <link rel="stylesheet" href="/css/admin.css">
 </head>
+
 <body>
-    
+
     <home-bar heading="Treningsstudio" crumb="ptrener" getlinks="/htmlfiler/admin" username="/myself">
     </home-bar>
+
+
     <div id="admin">
+
+
         <div class="table">
             <db-table id="table" update="ptrener" delete="ptrener" fields="ptrenerid:hidden,fornavn,etternavn,fdato,kjonn" sql="select * from ptrener">
                 <span slot="caption">Privat trener</span>
             </db-table>
         </div>
-        <db-insert id="form" fields="fornavn,etternavn" table="ptrener">
-            <span slot="heading">Registrer privat trener</span>
+
+        <db-insert id="form" fields="fornavn,etternavn,fdato,kjonn" table="ptrener">
+            <span slot="heading">Registrer Privat Trener</span>
         </db-insert>
+
     </div>
-    
+
+
 </body>
+
 </html>
