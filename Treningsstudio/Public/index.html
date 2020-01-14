@@ -10,23 +10,60 @@
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbTable.js"></script>
     <script src="/components/Homebar.js"></script>
-    <link rel="stylesheet" href="treningsstudio.css">
+    <link rel="stylesheet" href="/css/shop.css">
 </head>
 
 <body>
     <home-bar heading="Treningsstudio" username="/myself">
+        <li data-link="admin/gtime">Admin</li>
+        <!--<li data-link="gtime.html">Gruppetime</li>-->
+        <li data-link="/users/login">Login</li>
+        <li data-link="/users/signup">Ny bruker</li>
+        <li data-link="admin/bestilling">Bestilling</li>
     </home-bar>
-    <h1>Velkommen til treningsstudio</h1>
-    <div >
 
-        <div>
-            <a href="/admin/ptrener.html">Admin sider</a>
-        </div>
-        <div>
-            <a href="/ptrener.html">Se på trenere</a>
-        </div>
 
-    </div>
+    <h1 class="centered">Velkommen til treningsstudioet!</h1>
+    <main>
+        <article id="left">
+            <p>
+                Åpningstider.
+                <br>
+                Vi har åpent hver dag hele året! <br>
+                Men pass på, tidene varierer i helgene og feriene.
+            </p>
+        </article>
+        <article id="center">
+            <p>
+                <a href="gtime.html">Gruppetimer</a><br>
+                Gruppetimer er en god måte å trene på.<br>
+                Du trener sammen med andre og motivasjonen er på topp!<br>
+                Med god musikk og rytme kan dette bli det året du får taket på treningen!<br>
+           </p>
+        </article>
+        <article id="right">
+            <p>
+                <a href="ptrener.html">Privattrenere</a>
+                <br>
+                Lorem ipsum qua dolerem est sicut prius non per inferno ad astra iter facit.
+            </p>
+        </article>
+        <article id="top">
+            Lorem ipsum qua dolerem est sicut prius non per inferno ad astra iter facit.
+            [6] Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem
+            fluminis Rheni, spectant in septentrionem et orientem
+        </article>
+        <article id="bot">
+            [3] Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate
+            provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea
+            quae ad effeminandos animos pertinent important, [4] proximique sunt Germanis,
+            qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.
+            Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt,
+            quod fere cotidianis proeliis cum Germanis contendunt,
+            cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.
+        </article>
+
+    </main>
 
 
 </body>

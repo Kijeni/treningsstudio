@@ -22,7 +22,7 @@
 
         <db-table id="table" 
             update="true"
-            fields="tittel,dato,klokkelsett" 
+            fields="tittel,dato:date,klokkeslett:time" 
             sql="select * from gtime">
             <span slot="caption">Gruppetime</span>
         </db-table>

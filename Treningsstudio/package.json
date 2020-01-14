@@ -1,7 +1,7 @@
 {
   "name": "webserver",
   "version": "1.0.0",
-  "description": "server for bib",
+  "description": "server for shop",
   "main": "app.js",
   "author": "audun",
   "license": "ISC",

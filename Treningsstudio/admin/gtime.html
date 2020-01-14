@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registrer forfatter</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/components/DbUser.js"></script>
     <script src="/components/DbInsert.js"></script>
+    <script src="/components/DbList.js"></script>
     <script src="/components/DbTable.js"></script>
-    <script src="/components/DbForeign.js"></script>
     <script src="/components/Homebar.js"></script>
     <link rel="stylesheet" href="/css/admin.css">
 </head>
@@ -29,7 +30,7 @@
             </db-table>
         </div>
 
-        <db-insert id="form" fields="tittel,dato,klokkeslett" table="gtime">
+        <db-insert id="form" fields="tittel,dato:date,klokkeslett:time" table="gtime">
             <span slot="heading">Registrer gruppetime</span>
         </db-insert>
 
