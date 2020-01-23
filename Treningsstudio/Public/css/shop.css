@@ -37,13 +37,14 @@
 }
 
 home-bar {
-  /* --grad: var(--light-grad); */
+ --grad: var(--light-grad);
 }
 
 db-table {
   width: 40em;
   --alternate: slategray;
   --head: bisque;
+  color: ;
 }
 
 #login {
@@ -114,7 +115,7 @@ main {
 
 main > article {
   margin: 1em;
-  background-color: rgba(245, 245, 220, 0.351);
+  background-color: lightskyblue;
   padding: 10px;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.308) 3px 2px 2px;
@@ -122,14 +123,17 @@ main > article {
 
 #left {
   grid-area: left;
+  background-color: lightskyblue;
 }
 
 #right {
   grid-area: right;
+  background-color: lightskyblue;
 }
 
 #center {
   grid-area: center;
+  background-color: lightskyblue;
 }
 
 #left p:first-letter {
@@ -148,4 +152,8 @@ main > article {
 
 #bot {
   grid-area: bot;
+}
+
+h1 {
+  font-style: italic;
 }

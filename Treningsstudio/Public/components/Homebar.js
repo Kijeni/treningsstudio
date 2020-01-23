@@ -31,7 +31,7 @@ class HomeBar extends HTMLElement {
                 grid-template-columns: 1fr 1fr 2fr 3fr 1fr;
                 height: 70px;
                 background-color: rgba(32,166,231,.8);
-                background-image: var(--grad, linear-gradient(180deg,#20a8e9,rgba(30,158,220,.5)) );
+                background-image: linear-gradient(0.25turn, darkviolet, lightskyblue, darkturquoise);;
                 color: #fff;
             }
 

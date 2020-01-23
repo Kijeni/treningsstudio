@@ -1,6 +1,8 @@
 -- drop table bok,laaner,forfatter,eksemplar,utlaan cascade;
 
-
+create role trening password '123';
+alter role trening with login;
+create database trening owner trening;
 -- enter the new db
 \c trening;
 
@@ -44,7 +46,8 @@ CREATE TABLE kunde (
     or kjonn = 'f'),
   tilgang text not null,
   ptimeid int references ptime (ptimeid),
-  gtimeid int references gtime (gtimeid)
+  gtimeid int references gtime (gtimeid),
+  userid int
 );
 
 CREATE TABLE ptrener (
