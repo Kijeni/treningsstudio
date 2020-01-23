@@ -5,7 +5,7 @@ article {
 }
 #grid {
     display: grid;
-    grid-template-columns: repeat(4fr, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     border: solid black 1px; 
 }
 
@@ -16,4 +16,17 @@ article {
 }
 
 #grid > div > img {
-    width: 9em;
+    width: 7em;
+    margin: 2px;
+    place-items: center;
+    background-image: cover;
+    background-position: center;
+}
+
+
+
+border- radius - runde kanter på bildene 
+
+
+
+
