@@ -280,7 +280,10 @@ async function getuinf(sql, res) {
 }
 
 async function saferSQL(res, obj, options) {
-  const predefined = [];  // add acceptes sql here
+  const predefined = [
+
+    'select * from gtime'
+  ];  // add acceptes sql here
   let results = { error: "Illegal sql" };
   let tables = options.tables.split(",");
   let sql = obj.sql.replace("inner ", "");

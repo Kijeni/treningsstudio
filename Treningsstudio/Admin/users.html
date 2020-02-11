@@ -10,7 +10,7 @@
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbTable.js"></script>
     <script src="/components/Homebar.js"></script>
-    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="/css/shop2.css">
     <style>
      db-table {
        --tsize: 32em;
@@ -19,7 +19,10 @@
 </head>
 
 <body>
-    <home-bar heading="Nettbutikk" crumb="vare" getlinks="/htmlfiler/admin" username="/myself">
+    <home-bar heading="Kunder" crumb="" username="/myself">
+        <li data-link="bestilling">Bestillinger</li>
+        <li data-link="ptrener">Registrer private trenere</li>
+        <li data-link="gtime">Registrer gruppetime</li>
     </home-bar>
     <div id="admin">
        
@@ -42,7 +45,7 @@
         </form>
     </div>
     <div class="table">
-        <db-table id="table" update="users"  
+        <db-table id="table" update="users" delete="users"
             fields="userid:hidden,username,role,password" delete="users"
             sql="select * from users">
             <span slot="caption">Users</span>

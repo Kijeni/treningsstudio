@@ -37,7 +37,7 @@ home-bar {
 db-table {
     width: 40em;
    --alternate: slategray;
-   --head: bisque;
+   --head: rgb(75, 208, 218);
 }
 
 @media screen and (max-width: 850px) {
@@ -49,4 +49,3 @@ db-table {
         "view";
     }
   }
-

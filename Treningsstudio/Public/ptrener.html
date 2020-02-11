@@ -10,7 +10,6 @@
     <script src="/components/DbInsert.js"></script>
     <script src="/components/DbTable.js"></script>
     <script src="/components/Homebar.js"></script>
-    <script src="/components/DbList.js"></script>
     <link rel="stylesheet" href="/css/bib.css">
 </head>
 
@@ -26,20 +25,7 @@
             fields="fornavn,etternavn,fdato,kjonn" 
             sql="select * from ptrener">
             <span slot="caption">Privat trener</span>
-        
-        <h1>Våre privattrenere</h1>
         </db-table>
-        <db-list id="list" cssimport="/css/admin.css" update="vare" fields="navn,bilde"
-        sql="select * from ptrener">
-        <div>
-            <figure>
-                <img src="/media/${bilde}">
-                <figcaption> ${navn} </figcaption>
-            </figure>
-            
-        </div>
-
-    </db-list>
 
 
     </div>

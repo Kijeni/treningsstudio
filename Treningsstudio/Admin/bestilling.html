@@ -17,71 +17,65 @@
 
 <body>
 
-    <home-bar heading="Treningssenter" crumb="Bestilling av time" username="/myself">
-        <li data-link="index.html">Hjem</li>
+    <home-bar heading="Bestillinger" crumb="" username="/myself">
+        <li data-link="gtime">Registrer gruppetime</li>
+        <li data-link="ptrener">Registrer private trenere</li>
+        <li data-link="users">Kunder</li>
     </home-bar>
     
     <h1 class=" centered">Mine Bestillinger</h1>
         <div id="admin">
 
-            <db-insert 
-            id="form" 
-            fields="dato:date" 
-            table="bestilling">
-                <span slot="heading">Bestilling av time</span>
-                <db-user
-                id="kundeid"
-                field="kundeid"
-                label="Kundenr"></db-user>
-            </db-insert>
-           
-
-            <div class="table">
-                <db-table 
-                connected="kundeid:kundeid" 
-                id="bestilling" 
-                update="bestilling" 
-                key="bestillingid"
-                fields="bestillingid:number,dato:date" 
-                delete="bestilling" 
-                sql="select * from bestilling">
-                    <span slot="caption">Mine bestillinger</span>
-                </db-table>
 
                 <db-insert 
-                id="linje" 
-                fields="antall" 
-                foreign="vare.vareid:navn+pris"
+                id="form" 
+                foreign="gtime.gtimeid:tittel+klokkeslett"
                 connected="bestilling:bestillingid"
-                table="linje">
-                    <span slot="heading">Bestilling Vare</span>
+                fields="navn"
+                table="bestilling">
+                    <span slot="heading">Bestilling av gruppetime</span>
                 </db-insert>
 
-                <db-table 
-                connected="bestilling:bestillingid" 
-                fields="linjeid:hidden,navn,antall:int,pris:money"
-                update="linje" 
-                delete="linje"
-                sql="select l.*,v.navn,v.pris from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <span slot="caption">Varelinje</span>
-                </db-table>
+                <br>
+                <br>
+
+                <db-insert 
+                id="bestilling" 
+                foreign="ptrener.ptrenerid:fornavn+etternavn"
+                connected="bestilling:bestillingid"
+                fields="dato:date, klokkeslett:time"
+                table="bestilling">
+                    <span slot="heading">Bestilling av privat time</span>
+                </db-insert>
+
+                <br>
+                <br>
 
                 <db-table 
-                id="total" 
                 connected="bestilling:bestillingid" 
-                fields="total:money" 
-                update="linje" 
-                sql="select sum(l.antall * v.pris) as total
-                    from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <span slot="caption">Totalsum</span>
+                fields="bestillingid:hidden,navn,tittel,klokkeslett:time"
+                update="bestilling"
+                delete="bestilling"
+                sql="select b.navn,g.tittel,g.klokkeslett from bestilling b inner join kundetime k on
+                (b.kundetimeid = k.kundetimeid) inner join gtime g on
+                (g.kundetimeid = k.kundetimeid)">
+                    <span slot="caption">Bestilte gruppetimer</span>
                 </db-table>
 
-                <db-list 
-                cssimport="/css/admin.css" 
-                sql="select sum(l.antall * v.pris) as total
-                from linje l inner join vare v on (v.vareid = l.vareid)">
-                    <div class="total">Totalsummen blir ${total} kr</div>
-                </db-list>
+                <br><br>
+
+                <db-table 
+                connected="bestilling:bestillingid" 
+                fields="bestillingid:hidden,fornavn,dato:date,klokkeslett:clock"
+                update="bestilling"
+                delete="bestilling"
+                sql="select fornavn,tittel,klokkeslett,dato from kunde 
+                inner join kundetime on (kunde.kundetimeid = kundetime.kundetimeid)
+                inner join gtime on (gtime.kundetimeid = kundetime.kundetimeid)
+                inner join bestilling on (gtime.bestillingid = bestilling.bestillingid)">
+                    <span slot="caption">Bestilte privat timer</span>
+                </db-table>
+
 
             </div>
 
@@ -90,3 +84,4 @@
 </body>
 
 </html>
+

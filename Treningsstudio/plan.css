@@ -1,0 +1,63 @@
+body {
+    background-color: rgba(19, 163, 108, 0.473);
+}
+
+div {
+    background-color: aliceblue;
+    border: solid black;
+}
+
+li {
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+h2 {
+    text-align: center;
+    color: blue;
+}
+
+p {
+    margin-left: 15px;
+}
+
+div div div div {
+    text-align: center;
+    line-height: 7.5vh;
+    border: solid black 1px;
+    border-radius: 30%;
+    width: 17vw;
+    height: 7.5vh;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+div.a {
+    grid-area: a;
+    border: solid black 0px;
+}
+div.b {
+    grid-area: b;
+    border: solid black 0px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#kart {
+    margin: 10px;
+    border: solid black 1px;
+    display: grid;
+    grid-template-areas:
+    ". . . . . a . . . . ."
+    "b b b b b b b b b b b";
+}
+
+iframe {
+    position: center;
+    height: 500px;
+    width: 93vw;
+    margin-left: 3vw;;
+}

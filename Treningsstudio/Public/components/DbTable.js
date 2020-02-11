@@ -9,7 +9,7 @@
               border-collapse:collapse;
             }
             #thead {
-              background-color: var(--head, beige);
+              background-color: var(--head, lightblue);
             }
             th {
               text-transform: capitalize;
@@ -44,14 +44,14 @@
               font-weight:bold;
             }
             tr.selected {
-              box-shadow: inset 0 0 5px green;
+              box-shadow: inset 0 0 5px violet;
             }
             table.error thead tr {
-              box-shadow: inset 0 0 5px red, 0 0 0 orange;
+              box-shadow: inset 0 0 5px violet, 0 0 0 orange;
               animation: pulse 1s alternate infinite;
             }
             @keyframes pulse {
-              100% { box-shadow: inset 0 0 2px black, 0 0 6px red; }
+              100% { box-shadow: inset 0 0 2px black, 0 0 6px blue; }
             }
           </style>
           <table>

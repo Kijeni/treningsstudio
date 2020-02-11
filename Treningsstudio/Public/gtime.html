@@ -15,17 +15,25 @@
 
 <body>
 
-    <home-bar heading="Gruppetime" crumb="gtime" getlinks="/htmlfiler/public" >
+    <home-bar heading="Gruppetime" crumb="">
+            <li data-link="ipt">Privat trener</li>
+            <li data-link="opningstider">Åpningstider</li>
     </home-bar>
 
     <div id="main">
 
-        <db-table id="table" 
+       <!-- <db-table id="table" 
             update="true"
             fields="tittel,dato:date,klokkeslett:time" 
             sql="select * from gtime">
             <span slot="caption">Gruppetime</span>
-        </db-table>
+        </db-table>-->
+        <br>
+        <div class="table">
+                <db-table id="table" update="gtime" fields="gtimeid:hidden,tittel,dato,klokkeslett" sql="select * from gtime">
+                    <span slot="caption">Gruppetime</span>
+                </db-table>
+            </div>
 
 
     </div>
